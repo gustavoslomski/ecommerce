@@ -1,4 +1,10 @@
+<h3 class="text-center mb-4">Entre</h3>
+
 <%= simple_form_for(resource, html: { class: 'login-form' }, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="text-center">
+    <%= f.error_notification %>
+  </div>
+
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
@@ -12,9 +18,8 @@
                 placeholder: 'Senha',
                 input_html: { autocomplete: "current-password" } %>
   </div>
-  <div class="form-group">
-    <%= f.button :submit, "Entrar", class: 'btn btn-primary btn-block rounded p-3' %>
-  </div>
+  
+  <%= render 'devise/shared/button_submit', f: f, text: 'Entrar' %>
 
   <div class="form-group d-md-flex">
     <div class="w-50">
