@@ -2,13 +2,24 @@
 
 <%= simple_form_for(resource, html: { class: 'login-form' }, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="text-center">
-    <%= f.error_notification %>
+    <%= f.error_notification unless resource.errors.any? %>
+    <%= render 'devise/shared/error_messages' %>
   </div>
 
   <div class="form-inputs">
+    <%= f.input :name,
+                autofocus: true,
+                required: true,
+                label: false,
+                placeholder: 'Nome'
+    %>
+    <%= f.input :phone,
+                required: true,
+                label: false,
+                placeholder: 'Telefone'
+    %>
     <%= f.input :email,
                 required: true,
-                autofocus: true,
                 label: false,
                 placeholder: 'E-mail',
                 input_html: { autocomplete: "email" }%>
