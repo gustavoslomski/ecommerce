@@ -65,6 +65,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'byebug'
 end
 
 group :development do
@@ -88,4 +89,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'vcr'
+  gem 'webmock'
 end
