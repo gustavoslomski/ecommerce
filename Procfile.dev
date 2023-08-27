@@ -2,3 +2,4 @@ web: unset PORT && env RUBY_DEBUG_OPEN=true bin/rails server
 js: yarn build --watch
 css: yarn build:css --watch
 cssdevise: yarn build:css:devise --watch
+cssadmin: yarn build:css:admin --watch
