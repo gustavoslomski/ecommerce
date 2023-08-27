@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+<h1>Categories</h1>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="card shadow mb-4">
+			<div class="card-body">
+        <table id="categories" class="table table-striped">
+          <thead>
+            <th>Nome</th>
+            <th>Posição</th>
+            <th>Opções</th>
+          </thead>
+          <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <td><%= category.name %></td>
+                <td><%= category.position %></td>
+                <td>
+                  <div class="btn-group">
+                    <%= button_to "Detalhes", admin_category_path(category), method: :get, class: "btn btn-sm btn-primary mr-2" %>
+                    <%= button_to "Editar", edit_admin_category_path(category), method: :get, class: "btn btn-sm btn-warning mr-2" %>
+                    <%= button_to "Excluir", admin_category_path(category), method: :delete, class: "btn btn-sm btn-danger mr-2" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to "New category", new_admin_category_path %>
+      </div>
+		</div>
+	</div>
+</div>
