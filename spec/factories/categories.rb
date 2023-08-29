@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name { "MyString" }
-    position { 1 }
+    name { Fake::Name.name }
+    position { Faker::Number.digit }
   end
 end
