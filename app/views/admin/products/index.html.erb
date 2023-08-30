@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+<h1 class='h3 mb-0 text-gray-800 mb-4'>Produtos</h1>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="card shadow mb-4">
+			<div class="card-body">
+        <table id="products" class="table table-striped">
+          <thead>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Publicado</th>
+            <th>Opções</th>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr>
+                <td><%= product.name %></td>
+                <td><%= product.description %></td>
+                <td><%= product.price %></td>
+                <td><%= product.publish %></td>
+                <td>
+                  <div class="btn-group">
+                    <%= button_to "Detalhes", admin_product_path(product), method: :get, class: "btn btn-sm btn-primary mr-2" %>
+                    <%= button_to "Editar", edit_admin_product_path(product), method: :get, class: "btn btn-sm btn-warning mr-2" %>
+                    <%= button_to "Excluir", admin_product_path(product), method: :delete, class: "btn btn-sm btn-danger mr-2" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to "Novo produto", new_admin_product_path, class: 'btn btn-primary' %>
+      </div>
+		</div>
+	</div>
+</div>

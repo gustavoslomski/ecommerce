@@ -18,7 +18,19 @@
       <span>Categorias</span>
     </a>
   </li>
-  <li class="nav-item"><%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn-link" %></li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= admin_products_path %>">
+      <i class="fa fa-box-open"></i>
+      <span>Produtos</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to(destroy_user_session_path, class: 'nav-link', data: { turbo_method: :delete }) do %>
+      <i class="fa fa-arrow-alt-circle-left"></i>
+      <span>Sair</span>
+    <%end%>
+  </li>
 
   <hr class="sidebar-divider d-none d-md-block">
   <div class="text-center d-none d-md-inline">
