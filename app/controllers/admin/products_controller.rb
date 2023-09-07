@@ -12,8 +12,11 @@ module Admin
   
     # GET /products/new
     def new
-      @product = Product.new
+      @product = authorize Product.new
       @categories = Category.all
+    rescue Pundit::NotAuthorizedError
+      flash[:notice] =  'Antes de criar um produto, crie uma categoria.'
+      redirect_to action: :index
     end
   
     # GET /products/1/edit

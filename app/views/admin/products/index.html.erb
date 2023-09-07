@@ -30,7 +30,9 @@
             <% end %>
           </tbody>
         </table>
-        <%= link_to "Novo produto", new_admin_product_path, class: 'btn btn-primary' %>
+        <% if policy(:product).new? %>
+          <%= link_to "Novo produto", new_admin_product_path, class: 'btn btn-primary' %>
+        <% end %>
       </div>
 		</div>
 	</div>

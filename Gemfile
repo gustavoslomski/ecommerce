@@ -13,6 +13,8 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'pundit'
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
