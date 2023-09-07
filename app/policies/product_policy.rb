@@ -1,7 +1,5 @@
 class ProductPolicy < ApplicationPolicy
-  class Scope < Scope
-    def new?
-      Category.any?
-    end
+  def new?
+    Category.any?
   end
 end

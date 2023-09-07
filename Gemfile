@@ -15,6 +15,9 @@ gem 'simple_form'
 
 gem 'pundit'
 
+gem 'aws-sdk-s3'
+
+gem 'image_processing'
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
